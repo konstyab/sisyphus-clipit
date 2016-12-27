@@ -1,0 +1,49 @@
+.TH CLIPIT 1 "2010-11-11"
+.SH NAME
+ClipIt \- Lightweight GTK+ Clipboard Manager
+.SH SYNOPSIS
+.B clipit
+[\fIOPTION\fR]
+.SH DESCRIPTION
+\fBClipIt\fR is a lightweight GTK+ clipboard manager.
+
+\fBClipIt\fR features a clipboard CLI. Unrecognized options and the contents
+of your standard input get copied to your clipboard. See \fBCLI EXAMPLES\fR.
+.SH
+.B OPTIONS
+.TP
+.B \-?\fR, \fB\-\-help
+Show help options.
+.TP
+.B \-d\fR, \fB\-\-daemon
+Run as daemon. Use this mode if you just want \fBClipIt\fR to keep your clipboard
+and primary contents safe.
+.TP
+.B \-n\fR, \fB\-\-no-icon
+Do not use status icon.
+.TP
+.B \-c\fR, \fB\-\-clipboard
+Print clipboard contents.
+.TP
+.B \-p\fR, \fB\-\-primary
+Print primary contents.
+.SH NOTES
+.SS ACTIONS
+\fBClipIt's\fR actions perform commands using the contents of your clipboard. "\fB%s\fR" in the command
+is replaced with the clipboard contents.
+.SS CLI EXAMPLES
+.TP
+Put text in the clipboard
+ echo "copied to clipboard" | clipit
+ clipit "copied to clipboard"
+.TP
+Put text in the clipboard and print the clipboard contents
+ echo "copied to clipboard" | clipit \-c
+.SS Hotkeys
+ The available hotkey modifiers are <Ctrl>, <Alt> <Shift>, <Release>, <Meta>, <Super>, <Hyper>, <Mod[1\-5]>
+.SH SEE ALSO
+.PP
+Website: http://sourceforge.net/projects/gtkclipit/
+.SH AUTHOR
+Maintained by Cristian Henzel <oss@rspwn.com>.
+Forked from parcellite, which was written by Gilberto "Xyhthyx" Miralla <xyhthyx@gmail.com>.
